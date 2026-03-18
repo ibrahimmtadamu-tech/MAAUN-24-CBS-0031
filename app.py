@@ -76,13 +76,15 @@ def quiz():
     if request.method == "POST":
         username = request.form.get("username")
         matric_val = request.form.get("matric") # mathed to index.html
-    
+
+
         return render_template("quiz.html", questions=questions, username=username, matric=matric_val)
-    
     return render_template("index.html", questions=questions)
+    
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect(url_for('home'))
+    
 if __name__ == "__main__" :
     app.run(debug=True)
