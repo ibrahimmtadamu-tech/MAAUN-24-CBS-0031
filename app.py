@@ -27,7 +27,7 @@ questions = [
 
     Question("What is the largest mammal?",
              ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-             "Blue Whale")         
+             "Blue Whale")        
 ]
 @app.route("/")
 def home():
