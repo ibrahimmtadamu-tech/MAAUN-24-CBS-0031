@@ -31,10 +31,20 @@ questions = [
     Question("What is the chemical symbol for water?",
              ["H2O", "O2", "CO2", "NaCl"],
              "H2O"),
-
     Question.append("Who wrote 'Romeo and Juliet'?",
              ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
-             "William Shakespeare")
+             "William Shakespeare")   
+questions.append(Question("What is the chemical symbol for water?",
+    ["H2O", "O2", "CO2", "NaCl"],
+    "H2O"))
+
+questions.append(Question("Who wrote 'Romeo and Juliet'?",
+    ["William Shakespeare", "Charles Dickens", "Jane Austen"],
+    "William Shakespeare"))
+
+questions.append(Question("What is the capital of France?",
+    ["Berlin", "Madrid", "Paris", "Rome"],
+    "Paris"))   
 ]
 @app.route("/")
 def home():
