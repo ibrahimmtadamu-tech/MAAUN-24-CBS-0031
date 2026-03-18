@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request
+
+from flask import Flask, render_template, request,session,redirect, url_for
 from models import Question, Result
 
 app = Flask(__name__)
+app.secret_key = '200202'  # Replace with a real secret key
 
 # Question Queue (FIFO)
 questions = [
@@ -31,6 +33,9 @@ questions = [
     Question("What is the chemical symbol for water?",
              ["H2O", "O2", "CO2", "NaCl"],
              "H2O"),
+    Question("Who wrote 'Romeo and Juliet'?",
+             ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+             "William Shakespeare"),
     Question("What is the smallest prime number?",
              ["0", "1", "2", "3"],
              "2"),
@@ -75,6 +80,9 @@ def quiz():
         return render_template("quiz.html", questions=questions, username=username, matric=matric_val)
     
     return render_template("index.html", questions=questions)
-
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for('home'))
 if __name__ == "__main__" :
     app.run(debug=True)
