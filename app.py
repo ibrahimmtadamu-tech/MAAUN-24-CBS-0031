@@ -31,20 +31,21 @@ questions = [
     Question("What is the chemical symbol for water?",
              ["H2O", "O2", "CO2", "NaCl"],
              "H2O"),
-    Question.append("Who wrote 'Romeo and Juliet'?",
+    Question("Who wrote 'Romeo and Juliet'?",
              ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
-             "William Shakespeare")   
-questions.append(Question("What is the chemical symbol for water?",
-    ["H2O", "O2", "CO2", "NaCl"],
-    "H2O"))
-
-questions.append(Question("Who wrote 'Romeo and Juliet'?",
-    ["William Shakespeare", "Charles Dickens", "Jane Austen"],
-    "William Shakespeare"))
-
-questions.append(Question("What is the capital of France?",
-    ["Berlin", "Madrid", "Paris", "Rome"],
-    "Paris"))   
+             "William Shakespeare"),
+    Question("What is the smallest prime number?",
+             ["0", "1", "2", "3"],
+             "2"),
+    Question("What is the chemical symbol for water?",
+             ["H2O", "O2", "CO2", "NaCl"],
+             "H2O"),
+    Question("what is HTML stands for?",
+             ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "Hypertext Makeup Language"],
+             "Hyper Text Markup Language"),
+    Question("What is the capital of France?",
+             ["Berlin", "Madrid", "Paris", "Rome"],
+             "Paris")
 ]
 @app.route("/")
 def home():
