@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBT Quiz</title>
+</head>
+<body>
+    <h1>Answer the Questions</h1>
+    <h3>Name: {{ username }}</h3>
+    <h3>Matric Number: {{ matric }}</h3>
+    <hr>
+
+    <form action="/quiz" method="post">
+    <input type="hidden" name="username" value="{{ username }}">
+    <input type="hidden" name="matric" value="{{ matric }}">
+
+    {% for q in questions %}
+        {% set q_index = loop.index0 %}
+        
+        <div class="question-block">
+            <p><strong>{{ q_index + 1 }}. {{ q.question }}</strong></p>
+            
+            {% for option in q.options %}
+                <label>
+                    <input type="radio" name="q{{ q_index }}" value="{{ option }}" required>
+                    {{ option }}
+                </label><br>
+            {% endfor %}
+        </div>
+        <hr>
+    {% endfor %}
+
+    <button type="submit">Submit Test</button>
+</form>

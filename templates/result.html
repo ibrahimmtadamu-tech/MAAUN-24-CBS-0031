@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .result-box { 
+            display: inline-block; 
+            padding: 30px; 
+            border: 2px solid #007bff; 
+            border-radius: 15px; 
+            background-color: #f9f9f9;
+        }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Exam Result</h1>
+        <hr>
+        <p><strong>Student:</strong> {{ username }}</p>
+        <p><strong>Matric No:</strong> {{ matric }}</p>
+        
+        <h2>Score: {{ score }} / {{ total }}</h2>
+
+        {% set percent = (score / total * 100) | round(1) %}
+        <h3>Percentage: {{ percent }}%</h3>
+
+        {% if percent >= 50 %}
+            <p class="pass">STATUS: PASSED</p>
+        {% else %}
+            <p class="fail">STATUS: FAILED</p>
+        {% endif %}
+
+        <br>
+        <a href="/">Go Home</a>
+    </div>
+</body>
+</html>
