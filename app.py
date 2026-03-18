@@ -27,7 +27,10 @@ questions = [
 
     Question("What is the largest mammal?",
              ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-             "Blue Whale"),                
+             "Blue Whale"),  
+    Question.append(Question("What is the chemical symbol for water?",
+             ["H2O", "O2", "CO2", "NaCl"],
+             "H2O"))        
 ]
 @app.route("/")
 def home():
