@@ -41,7 +41,10 @@ questions = [
              "Paris"),
     Question("What is approximately the value of pi?",
              ["3.14", "2.71", "1.62", "1.41"],
-             "3.14")         
+             "3.14"),
+    Question("The following is not a programming language",
+             ["Python", "Java", "HTML", "C++"], 
+             "HTML")     
 ]
 @app.route("/")
 def home():
